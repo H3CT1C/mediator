@@ -8,7 +8,7 @@ module.exports = function(app) {
 
     var IMAGE_ROOT = app.config.dataPath("/images/");
     app.get('/api/images/:shortcode', function(req, res) {
-        app.res.images.model.findOne({
+        app.api.images.model.findOne({
             shortcode: req.params.shortcode
         }, function(err, img) {
             if (err) {
@@ -22,7 +22,7 @@ module.exports = function(app) {
     });
 
     app.get('/api/images', function(req, res) {
-        app.res.images.model.find(function(err, imgs) {
+        app.api.images.model.find(function(err, imgs) {
             if (err) {
                 return console.log(err);
             }
@@ -32,7 +32,7 @@ module.exports = function(app) {
 
     app.get('/api/images/tag/:tag', function(req, res) {
         var tag = req.params.tag;
-        app.res.images.model.find({
+        app.api.images.model.find({
             tags: tag
         }, function(err, imgs) {
             if (err) {
@@ -43,7 +43,7 @@ module.exports = function(app) {
     });
 
     app.delete('/api/images/:shortcode', function(req, res) {
-        app.res.images.model.findOne({
+        app.api.images.model.findOne({
             shortcode: req.params.shortcode
         }, function(err, img) {
             if (err) {
@@ -74,7 +74,7 @@ module.exports = function(app) {
         var data = JSON.parse(req.body.data);
         var file = req.files.file;
         debug.log("Creating", file.path);
-        app.res.images.svc.create(file.path, data.tags).then(function(img) {
+        app.api.images.svc.create(file.path, data.tags).then(function(img) {
             debug.log("Created this image...",img);
             res.send(img);
         }).catch(function(err) {

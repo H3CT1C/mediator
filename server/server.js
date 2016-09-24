@@ -57,7 +57,7 @@ logger.info('Serving static files from: %s', path.join(__dirname, "/../build"));
 app.use(express.static(path.join(__dirname, "/../build")));
 
 // API Resources
-app.res = require('res')(app);
+app.api = require('api')(app);
 
 // Seed
 if (app.config.seed) {

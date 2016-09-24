@@ -4,7 +4,7 @@ module.exports = function(app) {
     // Initial Seeding
     function initSeed() {
         var versionName = "Initial Seed: mediator";
-        app.res.version.model.find({
+        app.api.version.model.find({
             $query: {
                 version: versionName
             }
@@ -14,7 +14,7 @@ module.exports = function(app) {
                 logger.info("Running SEED %s", versionName);
 
                 // Remove All Images
-                app.res.images.model.find({}).remove(function() {});
+                app.api.images.model.find({}).remove(function() {});
 
             } else {
                 logger.info("Already ran %s", versionName);
@@ -23,7 +23,7 @@ module.exports = function(app) {
     }
 
     function done(versionName) {
-        var version = new app.res.version.model();
+        var version = new app.api.version.model();
         version.version = versionName;
         version.save(function(err) {
             if (err) logger.error(err);

@@ -13,7 +13,7 @@ module.exports = function(app) {
     var create = function(src, tags) {
         return new Promise((resolve, reject) => {
 
-            var img = new app.res.images.model();
+            var img = new app.api.images.model();
             img.shortcode = base36.generate(12);
             img.tags = tags;
             img.extension = path.extname(src).slice(1).toLowerCase();
