@@ -21,5 +21,14 @@ angular.module('mediatorApp.home', [])
 .controller('HomeCtrl', function HomeCtrl($scope, $rootScope, $state, $http) {
     $scope._ = _;
 
+    var apiKey = 'KR2htVYSHtcon3CGp2GETbAgNFFvYAXw';
+
+    $http.get('https://demo30-test.apigee.net/v1/hack/corporate/passengers?apikey=' + apiKey)
+      .then((res) => {
+        console.log(res);
+      }, (err) => {
+        console.log(err);
+      });
+
     //end of controller
 });
