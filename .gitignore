@@ -1,0 +1,10 @@
+.DS_Store
+/build
+/node_modules
+/server/public
+/server/uploads
+/client/vendor
+/server/data
+/uploads
+/server/imagesnpm-debug.log
+bash.exe.stackdump
