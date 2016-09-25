@@ -21,5 +21,7 @@ angular.module('mediatorApp.home', [])
 .controller('HomeCtrl', function HomeCtrl($scope, $rootScope, $state, $http) {
     $scope._ = _;
 
-    //end of controller
+    // $http.get('/api/corppassengers').then(function(data){
+    //   console.log(data);
+    // });
 });

@@ -12,7 +12,8 @@ module.exports = function(app) {
         lastBookingData: Date,
         passengerName: String,
         ticketNumber: String,
-        totalBookingsToDate: Number
+        totalBookingsToDate: Number,
+        isAvailable: Boolean
     });
 
 

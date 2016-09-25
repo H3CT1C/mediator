@@ -20,7 +20,7 @@ angular.module('mediatorApp.mediator', [])
 // Controller
 .controller('MediatorCtrl', function HomeCtrl($scope, $rootScope, $state, $http) {
     $scope._ = _;
-
+    
     $scope.list = [
       {
         name: "cool",

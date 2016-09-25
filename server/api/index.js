@@ -26,6 +26,7 @@ module.exports = function(app) {
     // Client should be last since it's the catch-all
     return {
         images: getAllTheThings('images', app),
+        corppassengers: getAllTheThings('corppassengers', app),
         version: getAllTheThings('version', app),
         client: getAllTheThings('client', app) // Must go last...
     };

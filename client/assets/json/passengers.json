@@ -12,7 +12,8 @@
     },
     "passengerName": "Daphne Whitley",
     "ticketNumber": "0165810756904",
-    "totalBookingsToDate": 131
+    "totalBookingsToDate": 131,
+    "isAvailable": false
 }, {
     "uuid": "fc00dd9a-7f82-11e6-8fc4-572808b84be5",
     "type": "corppassenger",
@@ -26,7 +27,8 @@
     },
     "passengerName": "Roxanne Kelley",
     "ticketNumber": "0168362912933",
-    "totalBookingsToDate": 36
+    "totalBookingsToDate": 36,
+    "isAvailable": false
 }, {
     "uuid": "fc0411ea-7f82-11e6-af28-13f73dd7b7d0",
     "type": "corppassenger",
@@ -40,7 +42,8 @@
     },
     "passengerName": "Sellers Norris",
     "ticketNumber": "0169964100525",
-    "totalBookingsToDate": 248
+    "totalBookingsToDate": 248,
+    "isAvailable": false
 }, {
     "uuid": "fc09902a-7f82-11e6-a203-2f661957aafb",
     "type": "corppassenger",
@@ -54,7 +57,8 @@
     },
     "passengerName": "Benjamin Griffith",
     "ticketNumber": "0164475186030",
-    "totalBookingsToDate": 195
+    "totalBookingsToDate": 195,
+    "isAvailable": false
 }, {
     "uuid": "fc0cc47a-7f82-11e6-b8fc-4f9357ad2abf",
     "type": "corppassenger",
@@ -68,7 +72,8 @@
     },
     "passengerName": "Wagner Everett",
     "ticketNumber": "0168601549714",
-    "totalBookingsToDate": 62
+    "totalBookingsToDate": 62,
+    "isAvailable": false
 }, {
     "uuid": "fc0faaaa-7f82-11e6-b13c-37093bb6dd31",
     "type": "corppassenger",
@@ -82,7 +87,8 @@
     },
     "passengerName": "Dixie Estrada",
     "ticketNumber": "0169806775869",
-    "totalBookingsToDate": 228
+    "totalBookingsToDate": 228,
+    "isAvailable": false
 }, {
     "uuid": "fc132d1a-7f82-11e6-934c-3512e1b0c960",
     "type": "corppassenger",
@@ -96,7 +102,8 @@
     },
     "passengerName": "Mamie Hopkins",
     "ticketNumber": "0167040468918",
-    "totalBookingsToDate": 74
+    "totalBookingsToDate": 74,
+    "isAvailable": false
 }, {
     "uuid": "fc163a5a-7f82-11e6-bb9a-cdff87b7f965",
     "type": "corppassenger",
@@ -110,7 +117,8 @@
     },
     "passengerName": "Mara Thornton",
     "ticketNumber": "016115041629",
-    "totalBookingsToDate": 170
+    "totalBookingsToDate": 170,
+    "isAvailable": false
 }, {
     "uuid": "fc19479a-7f82-11e6-9121-cb2bba5ef8c4",
     "type": "corppassenger",
@@ -124,7 +132,8 @@
     },
     "passengerName": "Cole Calderon",
     "ticketNumber": "0164876384747",
-    "totalBookingsToDate": 24
+    "totalBookingsToDate": 24,
+    "isAvailable": false
 }, {
     "uuid": "fc1c7bea-7f82-11e6-8f33-d18b3229817d",
     "type": "corppassenger",
@@ -138,6 +147,7 @@
     },
     "passengerName": "Moore Mckenzie",
     "ticketNumber": "016237300719",
-    "totalBookingsToDate": 166
+    "totalBookingsToDate": 166,
+    "isAvailable": false
   }
 ]

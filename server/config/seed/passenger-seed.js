@@ -1,38 +1,50 @@
-var request = require('request');
+function createCorpPassenger(app, passenger) {
+    return new Promise((resolve, reject) => {
+        var corppassenger = new app.api.corppassengers.model();
+        corppassenger.uuid = passenger.uuid;
+        corppassenger.type = passenger.type;
+        corppassenger.created = passenger.created;
+        corppassenger.modified = passenger.modified;
+        corppassenger.confNumber = passenger.confNumber;
+        corppassenger.freqFlierNumber = passenger.freqFlierNumber;
+        corppassenger.lastBookingData = passenger.lastBookingData;
+        corppassenger.passengerName = passenger.passengerName;
+        corppassenger.ticketNumber = passenger.ticketNumber;
+        corppassenger.totalBookingsToDate = passenger.totalBookingsToDate;
+        corppassenger.isAvailable = passenger.isAvailable;
 
-function createCorpPassenger(app, uuid, type, created, modified, confNumber,
-    freqFlierNumber, lastBookingData, passengerName,
-    ticketNumber, totalBookingsToDate) {
-    var corppassenger = app.api.corppassengers.model;
+        corppassenger.save(function(err) {
+            if (err) {
+                console.log(err);
+                return reject(err);
+            }
+            console.log("corpPassenger created", corppassenger.passengerName);
+            return resolve(corppassenger);
+        });
+    });
 
-
-}
+};
 
 module.exports = function(app) {
-    var apiKey = 'KR2htVYSHtcon3CGp2GETbAgNFFvYAXw';
-    return new Promise(resolve, reject) => {
+    return new Promise((resolve, reject) => {
+        var apiKey = 'KR2htVYSHtcon3CGp2GETbAgNFFvYAXw';
+        var request = require('request');
         app.api.corppassengers.model.find({}).remove(function() {
-            var passengers = [];
             request('http://demo30-test.apigee.net/v1/hack/corporate/passengers?apikey=' + apiKey,
                 function(error, response, body) {
-                    passengers = body.entities; //this might need to be response.body
+                    passengers = JSON.parse(body).entities;
+                    var passenger = [];
+                    var promises = [];
+                    passengers.forEach(function(passenger, index, array) {
+                        promises.push(createCorpPassenger(app, passenger));
+                    });
+                    Promise.all(promises).then(function(response) {
+                        return resolve(response);
+                    }, function(err) {
+                        return reject(err);
+                    });
                 });
-            passengers.forEach((index, item) => {
-              createCorpPassenger();
-            });
-            var promises = []
-        })
-    }
 
-    app.get('/api/corppassengers', function(req, res) {
-        var apiKey = 'KR2htVYSHtcon3CGp2GETbAgNFFvYAXw';
-
-        console.log('wtf😳', Math.floor(Date.now() / 1000));
-
-        request('http://demo30-test.apigee.net/v1/hack/corporate/passengers?apikey=' + apiKey,
-            function(error, response, body) {
-                // console.log(response.body);
-            });
-        res.status(200);
+        });
     });
-}
+};
