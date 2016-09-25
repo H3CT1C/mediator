@@ -11,7 +11,6 @@ function createCorpPassenger(app, passenger) {
         corppassenger.passengerName = passenger.passengerName;
         corppassenger.ticketNumber = passenger.ticketNumber;
         corppassenger.totalBookingsToDate = passenger.totalBookingsToDate;
-        corppassenger.isAvailable = false;
 
         corppassenger.save(function(err) {
             if (err) {
@@ -27,23 +26,23 @@ function createCorpPassenger(app, passenger) {
 
 module.exports = function(app) {
     return new Promise((resolve, reject) => {
-        var apiKey = 'KR2htVYSHtcon3CGp2GETbAgNFFvYAXw';
-        var request = require('request');
+
         app.api.corppassengers.model.find({}).remove(function() {
-            request('http://demo30-test.apigee.net/v1/hack/corporate/passengers?apikey=' + apiKey,
-                function(error, response, body) {
-                    passengers = JSON.parse(body).entities;
-                    var passenger = [];
-                    var promises = [];
-                    passengers.forEach(function(passenger, index, array) {
-                        promises.push(createCorpPassenger(app, passenger));
-                    });
-                    Promise.all(promises).then(function(response) {
-                        return resolve(response);
-                    }, function(err) {
-                        return reject(err);
-                    });
-                });
+            var apiKey = 'KR2htVYSHtcon3CGp2GETbAgNFFvYAXw';
+            var request = require('request');
+            var parsedJSON = require('./data/passengers.json');
+            var passengers = parsedJSON;
+            var passenger = [];
+            var promises = [];
+            passengers.forEach(function(passenger, index, array) {
+                promises.push(createCorpPassenger(app, passenger));
+            });
+            Promise.all(promises).then(function(response) {
+                return resolve(response);
+            }, function(err) {
+                return reject(err);
+            });
+
 
         });
     });

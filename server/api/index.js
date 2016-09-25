@@ -27,6 +27,7 @@ module.exports = function(app) {
     return {
         images: getAllTheThings('images', app),
         corppassengers: getAllTheThings('corppassengers', app),
+        tickets: getAllTheThings('tickets', app),
         version: getAllTheThings('version', app),
         client: getAllTheThings('client', app) // Must go last...
     };
