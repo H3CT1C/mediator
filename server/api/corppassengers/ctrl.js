@@ -13,9 +13,18 @@ module.exports = function(app) {
       });
     });
 
+    //the id will be equal to the uuid of the passengers boarding info
     app.put('/api/corppassengers/:id', function(req, res) {
 
         console.log("put request");
+        console.log(req.body);
+        res.status(200);
+    });
+
+    app.post('/api/corppassengers/:id', function(req, res) {
+
+        console.log("put request");
+        console.log(req.body);
         res.status(200);
     });
 };
