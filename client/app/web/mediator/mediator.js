@@ -18,7 +18,7 @@ angular.module('mediatorApp.mediator', [])
 })
 
 // Controller
-.controller('MediatorCtrl', function HomeCtrl($scope, $rootScope, $state, $http, moment) {
+.controller('MediatorCtrl', function HomeCtrl($scope, $rootScope, $state, $http) {
     $scope._ = _;
     $scope.tickets = [];
     $scope.availableTickets = [];
