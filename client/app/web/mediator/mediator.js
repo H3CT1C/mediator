@@ -20,10 +20,13 @@ angular.module('mediatorApp.mediator', [])
 // Controller
 .controller('MediatorCtrl', function HomeCtrl($scope, $rootScope, $state, $http) {
     $scope._ = _;
-
-    $.getJSON("../assets/json/passengers.json", function(json) {
-    console.log(json); // this will show the info it in firebug console
-    });
-
+    // var corpPassengers;
+    // $.getJSON("../../assets/json/passengers.json", function(json) {
+    //     corpPassengers = json;
+    // });
+    //
+    // $scope.resellTicket = function(ticketNumber){
+    //   corpPassengers.forEach(console.log(this));
+    // }
     //end of controller
 });
