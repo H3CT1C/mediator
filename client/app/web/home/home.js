@@ -24,12 +24,9 @@ angular.module('mediatorApp.home', [])
     $http.get('/api/corppassengers').then(function(data){
            var userInfo = data;
            console.log(userInfo);
-          //   $http.put('/api/corppassengers/fbfd341a-7f82-11e6-9ccc-916367f449e2', userInfo).then(function(response){
-          // console.log(response);
-          //   });
      });
 
-     $http.get('/api/tickets').then(function(data){
+     $http.get('/api/tickets/0165810756904').then(function(data){
        console.log(data);
       });
 

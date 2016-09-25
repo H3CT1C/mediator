@@ -5,7 +5,7 @@
     "destination": "MIA",
     "departDate": "2015-10-01T04:33:25 +04:00",
     "returnDate": "",
-    "isAvailable": false
+    "isAvailable": true
   },
   {
     "ticketNumber": "0168362912933",
@@ -13,7 +13,7 @@
     "destination": "BOS",
     "departDate": "2014-09-16T09:07:09 +04:00",
     "returnDate": "",
-    "isAvailable": false
+    "isAvailable": true
   },
   {
     "ticketNumber": "0169964100525",
@@ -21,7 +21,7 @@
     "destination": "LAX",
     "departDate": "2014-03-05T12:07:55 +05:00",
     "returnDate": "",
-    "isAvailable": false
+    "isAvailable": true
   },
   {
     "ticketNumber": "0164475186030",
