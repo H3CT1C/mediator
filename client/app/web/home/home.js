@@ -26,7 +26,7 @@ angular.module('mediatorApp.home', [])
            console.log(userInfo);
      });
 
-     $http.get('/api/tickets/0165810756904').then(function(data){
+     $http.put('/api/tickets/0164475186030').then(function(data){
        console.log(data);
       });
 
