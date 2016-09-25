@@ -55,3 +55,17 @@ How to use Delta airlines API along with familiarizing ourselves with Node, Angu
 - To keep track of ticket prices.
 - Allow Delta sky club members to re-list their tickets and have them be sold as the next available ticket for the flight. While Delta may not receive a profit on that transaction, it would incentivize passengers to become sky club members.
 - See this as a possible opportunity and as a new approach to refund customers for their flights while still maximizing profit.
+
+## Demo
+
+### Home Page
+
+![home](/client/assets/images/home.png)
+
+### Trips Page
+
+![home](/client/assets/images/trips.png)
+
+### Mediator Page
+
+![home](/client/assets/images/mediator.png)
