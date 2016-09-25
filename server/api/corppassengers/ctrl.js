@@ -4,9 +4,14 @@ module.exports = function(app) {
     //var corppassenger = app.api.corppassengers.model;
 
     app.get('/api/corppassengers', function(req, res) {
-        res.status(200);
+      app.api.corppassengers.model.find(function(err, passengers) {
+          if (err) {
+              return console.log(err);
+          }
+          console.log(passengers);
+          res.json(passengers);
+      });
     });
-    //corppasenger.save()
 
     app.put('/api/corppassengers/:id', function(req, res) {
 
