@@ -21,11 +21,10 @@ angular.module('mediatorApp.home', [])
 .controller('HomeCtrl', function HomeCtrl($scope, $rootScope, $state, $http) {
     $scope._ = _;
     $scope.passengerName = 'alicia';
-
     $scope.setPassenger = function() {
       console.log($scope.passengerName);
       $state.go('trips', {name: $scope.passengerName});
     };
-
+    
     //end of controller
 });

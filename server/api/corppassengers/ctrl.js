@@ -1,7 +1,6 @@
 module.exports = function(app) {
     var request = require('request');
     var apiKey = 'KR2htVYSHtcon3CGp2GETbAgNFFvYAXw';
-    //var corppassenger = app.api.corppassengers.model;
 
     app.get('/api/corppassengers', function(req, res) {
         app.api.corppassengers.model.find(function(err, passengers) {
@@ -12,24 +11,31 @@ module.exports = function(app) {
         });
     });
 
-    app.get('/api/corppassengers/:id', function(req, res) {
-      app.api.corppassengers.model.findOne(id, function(err, passenger) {
-          console.log('passengerGET:', passenger)
-          if (err) {
-              res.send('There was an error processing the tasks');
-          } else {
-              todo.read = true;
-              todo.save();
-              res.send('read');
-          }
-      });
+    app.get('/api/corppassengers/:uuid', function(req, res) {
+        app.api.corppassengers.model.findOne({
+            uuid: req.params.uuid
+        }, function(err, passenger) {
+            console.log('putting: ', passenger)
+            if (err) {
+                res.send('There was an error processing the passenger uuid');
+            } else {
+                res.json(passenger);
+            }
+        });
     });
 
-    //this will be used when the person decides to book a resellable ticket
-    app.post('/api/corppassengers/:id', function(req, res) {
-
-        console.log("put request");
-        console.log(req.body);
-        res.status(200);
+    app.put('/api/corppassengers/:uuid', function(req, res) {
+        app.api.corppassengers.model.findOne({
+            uuid: req.params.uuid
+        }, function(err, passenger) {
+            console.log('putting: ', passenger)
+            if (err) {
+                res.send('There was an error processing the passenger uuid');
+            } else {
+                console.log(req.body)
+                passenger.passengerName = req.body.passengerName;
+                res.json(passenger);
+            }
+        });
     });
 };
