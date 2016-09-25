@@ -1,11 +1,11 @@
 .container.trips-page(ng-controller="TripsCtrl")
 	div(style="width: 200px; position: fixed; left: 235px; top: -66px;")
 		img(src="../../assets/images/logo.png")
-			
-	h3.white-text(style="position: fixed;") My Trips 
+
+	h3.white-text(style="position: fixed;") My Trips
 		span(style="color: rgb(158,189,231); font-size: 22px;") ({{numberOfTickets}})
-			
-	div(style="padding-top: 126px;" ng-show="numberOfTickets")		
+
+	div(style="padding-top: 126px;" ng-show="numberOfTickets")
 		.row
 			.col.s12.m6
 				.card.white
@@ -16,13 +16,12 @@
 						span.card-title(style="font-weight: bold; line-height: 28px;") {{ticket.destination}}
 						p(style="font-size: 13px; color: rgb(113,120,131); font-weight: bolder;")
 							p(style="color: #9e9e9e") 9 hours until check-in
-							
+
 					.card-action(style="padding: 10px 20px 10px 20px")
 						div(style="text-align: right;")
 							a.waves-effect.waves-light.btn-flat.white-text(style="margin-right: 0; background-color: rgb(108, 190, 247);" ng-click="relist(ticket.ticketNumber)") Relist
-			
-	div(style="padding-top: 126px;" ng-hide="numberOfTickets")		
-		p(style="color: rgb(113,120,131);") You have no flights scheduled with us at this time. Checkout what's available in Mediator!		
+
+	div(style="padding-top: 126px;" ng-hide="numberOfTickets")
+		p(style="color: rgb(113,120,131);") You have no flights scheduled with us at this time. Checkout what's available in Mediator!
 		div(style="text-align: right;")
-			a.waves-effect.waves-light.btn-flat.white-text(style="margin-right: 0; background-color: rgb(108, 190, 247);" ng-click="goToMediator" ng-hide="numberOfTickets") Mediator
-				
+			a.waves-effect.waves-light.btn-flat.white-text(style="margin-right: 0; background-color: rgb(108, 190, 247);" ng-click="goToMediator()" ng-hide="numberOfTickets") Mediator
