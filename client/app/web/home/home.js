@@ -20,15 +20,12 @@ angular.module('mediatorApp.home', [])
 // Controller
 .controller('HomeCtrl', function HomeCtrl($scope, $rootScope, $state, $http) {
     $scope._ = _;
+    $scope.passengerName = 'alicia';
 
-    $http.get('/api/corppassengers').then(function(data){
-           var userInfo = data;
-           console.log(userInfo);
-     });
+    $scope.setPassenger = function() {
+      console.log($scope.passengerName);
+      $state.go('trips', {name: $scope.passengerName});
+    };
 
-     $http.get('/api/tickets/0165810756904').then(function(data){
-       console.log(data);
-      });
-
-
+    //end of controller
 });
