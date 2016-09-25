@@ -27,7 +27,6 @@ angular.module('mediatorApp', [
     $rootScope.backgroundUrl = null;
     $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
         if (angular.isDefined(toState.data.pageTitle)) {
-            // $rootScope.pageTitle = toState.data.pageTitle + ' | ' + SiteConfig.siteName;
             $rootScope.pageTitle = SiteConfig.siteName;
         }
     });

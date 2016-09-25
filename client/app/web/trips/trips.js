@@ -12,7 +12,7 @@ angular.module('mediatorApp.trips', [])
             }
         },
         data: {
-            pageTitle: 'Trips'
+            pageTitle: 'My Trips'
         }
     });
 })

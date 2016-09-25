@@ -3,5 +3,5 @@ angular.module('mediatorApp.config', [])
         api_url: '/api/',
         currentYear: new Date().getFullYear(),
         localStorageBase: "mediator.v1.",
-        siteName: "mediator"
+        siteName: "Mediator"
     });
