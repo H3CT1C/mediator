@@ -4,13 +4,17 @@
 	.center
 		h1.white-text What is Mediator?
 		
+		div
+			p(style="color: white")
+				| A new way to look at Delta flight refunds.
+				| Try it out!
 	.row(style="margin-left: 20px; margin-right: 20px; display: flex; flex-direction: column;")
 		.col.s12(style="padding 0;")
 			.row
 				.input-field.col.s12
 					input#name.validate(type='text' ng-model="passengerName")
 					label.active(for='name') Passenger Name
-		a.waves-effect.waves-light.btn-flat.white-text(style="margin-right: 0; background-color: rgb(108, 190, 247); text-align: center;" ng-click="setPassenger()") Login
+		a.waves-effect.waves-light.btn-flat.white-text(style="margin-right: 0; background-color: rgb(108, 190, 247); text-align: center;" ng-click="setPassenger()") Submit
 	
 		
 		
