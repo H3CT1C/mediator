@@ -18,27 +18,18 @@ angular.module('mediatorApp.mediator', [])
 })
 
 // Controller
-.controller('MediatorCtrl', function HomeCtrl($scope, $rootScope, $state, $http) {
+.controller('MediatorCtrl', function HomeCtrl($scope, $rootScope, $state, $http, moment) {
     $scope._ = _;
-    
-    $scope.list = [
-      {
-        name: "cool",
-        destination: "beans"
-      },
-      {
-        name: "cool",
-        destination: "beans"
-      },
-      {
-        name: "cool",
-        destination: "beans"
-      },
-      {
-        name: "cool",
-        destination: "beans"
-      }
-    ];
+    $scope.tickets = [];
+    $scope.availableTickets = [];
 
-    //end of controller
+    $http.get('/api/tickets')
+        .then((response) => {
+            $scope.tickets = response.data;
+            $scope.availableTickets = $scope.tickets.filter((ticket) => ticket.isAvailable);
+        }, (error) => {
+            console.error('ERROR 😡', error);
+        });
+
+      //end of controller
 });
