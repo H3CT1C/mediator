@@ -27,6 +27,7 @@ angular.module('mediatorApp.mediator', [])
         .then((response) => {
             $scope.tickets = response.data;
             $scope.availableTickets = $scope.tickets.filter((ticket) => ticket.isAvailable);
+            $scope.availableTickets = $scope.availableTickets.reverse();
         }, (error) => {
             console.error('ERROR 😡', error);
         });
