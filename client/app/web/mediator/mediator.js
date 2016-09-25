@@ -4,10 +4,10 @@ angular.module('mediatorApp.mediator', [])
 // Routing
 .config(function config($stateProvider) {
     $stateProvider.state('mediator', {
-        url: '/',
+        url: '/mediator',
         views: {
             "main": {
-                controller: 'mediatorCtrl',
+                controller: 'MediatorCtrl',
                 templateUrl: 'app/web/mediator/mediator.html'
             }
         },
@@ -21,9 +21,24 @@ angular.module('mediatorApp.mediator', [])
 .controller('MediatorCtrl', function HomeCtrl($scope, $rootScope, $state, $http) {
     $scope._ = _;
 
-    $.getJSON("../assets/json/passengers.json", function(json) {
-    console.log(json); // this will show the info it in firebug console
-    });
+    $scope.list = [
+      {
+        name: "cool",
+        destination: "beans"
+      },
+      {
+        name: "cool",
+        destination: "beans"
+      },
+      {
+        name: "cool",
+        destination: "beans"
+      },
+      {
+        name: "cool",
+        destination: "beans"
+      }
+    ];
 
     //end of controller
 });

@@ -1,4 +1,20 @@
-.top-bar
-.container.home-page
-	.center
-		h1.white-text mediator
+.container.mediator-page(ng-controller="MediatorCtrl")
+	div(style="width: 200px; position: fixed; left: 235px; top: -66px;")
+		img(src="../../assets/images/logo.png")
+
+	h3.white-text Mediator
+	
+	div(ng-repeat="item in list")
+		.row
+			.col.s12.m6
+				.card.white
+					.card-content.black-text
+						span.card-title {{item.destination}}
+						p
+							| I am a very simple card. I am good at containing small bits of information.
+							| I am convenient because I require little markup to use effectively.
+					.card-action
+						a(href='#') {{item.name}}
+						a(href='#') This is a link
+
+		

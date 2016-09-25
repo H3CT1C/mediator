@@ -4,7 +4,7 @@ angular.module('mediatorApp.trips', [])
 // Routing
 .config(function config($stateProvider) {
     $stateProvider.state('trips', {
-        url: '/',
+        url: '/trips',
         views: {
             "main": {
                 controller: 'TripsCtrl',
