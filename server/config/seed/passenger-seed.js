@@ -11,7 +11,7 @@ function createCorpPassenger(app, passenger) {
         corppassenger.passengerName = passenger.passengerName;
         corppassenger.ticketNumber = passenger.ticketNumber;
         corppassenger.totalBookingsToDate = passenger.totalBookingsToDate;
-        corppassenger.isAvailable = passenger.isAvailable;
+        corppassenger.isAvailable = false;
 
         corppassenger.save(function(err) {
             if (err) {
