@@ -3,7 +3,7 @@
 		img(src="../../assets/images/logo.png")
 
 	h3.white-text(style="position: fixed;") Mediator
-	
+
 	div(style="padding-top: 126px;")
 		div(ng-repeat="ticket in availableTickets")
 			.row
@@ -13,11 +13,11 @@
 							span.card-title(style="font-weight: bold; line-height: 28px;") {{ticket.origin}} ✈️ {{ticket.destination}}
 							p(style="font-size: 13px; color: rgb(113,120,131); font-weight: bolder; margin-bottom: 15px;")
 								| Departs on {{ticket.departDate}}
+
+
 							p
 								| Flight to {{ticket.destination}} is now available!
-								
+
 						.card-action(style="padding: 10px 20px 10px 20px")
 							div(style="text-align: right;")
 								a.waves-effect.waves-light.btn-flat.white-text(style="margin-right: 0; background-color: rgb(108, 190, 247);") Book now
-
-		

@@ -27,6 +27,8 @@ angular.module('mediatorApp.mediator', [])
         .then((response) => {
             $scope.tickets = response.data;
             $scope.availableTickets = $scope.tickets.filter((ticket) => ticket.isAvailable);
+            $scope.availableTickets.forEach((ticket) => ticket.departDate = new Date(ticket.departDate.split("\ ")[0]).toLocaleString());
+
         }, (error) => {
             console.error('ERROR 😡', error);
         });
