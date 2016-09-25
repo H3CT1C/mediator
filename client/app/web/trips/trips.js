@@ -24,6 +24,8 @@ angular.module('mediatorApp.trips', [])
     $scope.currentPassengerName = $stateParams.name;
     $scope.currentPassenger = [];
     $scope.ticketNumber = '';
+    $scope.ticket;
+    $scope.numberOfTickets = 0;
 
     $http.get('/api/corppassengers')
         .then((response) => {
@@ -33,12 +35,52 @@ angular.module('mediatorApp.trips', [])
             if ($scope.currentPassenger.length > 0) {
                 $scope.ticketNumber = $scope.currentPassenger[0].ticketNumber;
             } else {
-              console.log("No ticket number available for passenger", $scope.currentPassengerName);
+                console.log("No ticket number available for passenger", $scope.currentPassengerName);
             }
 
+            $http.get("/api/tickets/" + $scope.ticketNumber)
+                .then((response) => {
+                    console.log(response);
+                    // $scope.ticket = (response.data.isAvailable): {} ? response.data;
+                    if (!response.data.isAvailable) {
+                        $scope.ticket = response.data;
+                        $scope.numberOfTickets = 1;
+                    }
+                }, (error) => {
+                    console.error('TICKET ERROR 😡', error);
+                });
+
         }, (error) => {
-            console.error('ERROR 😡', error);
+            console.error('PASSENGER ERROR 😡', error);
         });
+
+
+    $scope.relist = function(ticketNumber) {
+
+        $http.put("/api/tickets/" + ticketNumber)
+            .then((response) => {
+                console.log(response);
+                $http.get("/api/tickets/" + $scope.ticketNumber)
+                    .then((response) => {
+                        console.log(response);
+                        if (!response.data.isAvailable) {
+                            $scope.ticket = response.data;
+                            $scope.numberOfTickets = 1;
+                        } else {
+                          $scope.numberOfTickets = 0;
+                        }
+                    }, (error) => {
+                        console.error('TICKET ERROR 😡', error);
+                    });
+            }, (error) => {
+                console.log(error);
+            });
+    }
+
+    $scope.goToMediator = function() {
+      console.log('hi');
+      $state.go('/mediator');
+    }
 
     //end of controller
 });
