@@ -12,7 +12,7 @@ module.exports = function(app) {
         });
     });
 
-    app.put('/api/tickets/:ticketNumber', function(req, res) {
+    app.get('/api/tickets/:ticketNumber', function(req, res) {
         console.log(req.params.ticketNumber)
         app.api.tickets.model.findOne({ticketNumber: req.params.ticketNumber}, function(err, ticket) {
             if (err) {
