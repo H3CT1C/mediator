@@ -30,11 +30,15 @@ angular.module('mediatorApp.trips', [])
             $scope.passengers = response.data;
             $scope.currentPassenger = $scope.passengers.filter((passenger) => passenger.passengerName === $scope.currentPassengerName);
 
-            $scope.ticketNumber = $scope.currentPassenger[0].ticketNumber;
+            if ($scope.currentPassenger.length > 0) {
+                $scope.ticketNumber = $scope.currentPassenger[0].ticketNumber;
+            } else {
+              console.log("No ticket number available for passenger", $scope.currentPassengerName);
+            }
 
         }, (error) => {
             console.error('ERROR 😡', error);
         });
-        
+
     //end of controller
 });
