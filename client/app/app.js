@@ -6,7 +6,9 @@ angular.module('mediatorApp', [
     'templates',
     'mediatorApp.config',
     'mediatorApp.404',
-    'mediatorApp.home'
+    'mediatorApp.home',
+    'mediatorApp.mediator',
+    'mediatorApp.trips'
 ])
 
 .config(function myAppConfig($locationProvider, $stateProvider, $httpProvider, $urlRouterProvider, SiteConfig) {
