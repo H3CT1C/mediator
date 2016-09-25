@@ -1,0 +1,63 @@
+[
+  {
+    "id": "0165810756904",
+    "origin": "ATL",
+    "destination": "MIA",
+    "departDate": "2015-10-01T04:33:25 +04:00",
+    "returnDate": ""
+}, {
+    "id": "0168362912933",
+    "origin": "LGA",
+    "destination": "BOS",
+    "departDate": "2014-09-16T09:07:09 +04:00",
+    "returnDate": ""
+}, {
+    "id": "0169964100525",
+    "origin": "BOS",
+    "destination": "LAX",
+    "departDate": "2014-03-05T12:07:55 +05:00",
+    "returnDate": ""
+}, {
+    "id": "0164475186030",
+    "origin": "ATL",
+    "destination": "MIA",
+    "departDate": "2016-08-12T11:52:52 +04:00",
+    "returnDate": ""
+}, {
+    "id": "0168601549714",
+    "origin": "MIA",
+    "destination": "ATL",
+    "departDate": "2014-06-14T11:31:59 +04:00",
+    "returnDate": ""
+}, {
+    "id": "0169806775869",
+    "origin": "FTL",
+    "destination": "MIA",
+    "departDate": "2014-10-04T09:33:11 +04:00",
+    "returnDate": ""
+}, {
+    "id": "0167040468918",
+    "origin": "MIA",
+    "destination": "BOS",
+    "departDate": "2014-04-13T07:52:16 +04:00",
+    "returnDate": ""
+}, {
+    "id": "016115041629",
+    "origin": "BOS",
+    "destination": "FTL",
+    "departDate": "2016-06-20T08:39:02 +04:00",
+    "returnDate": ""
+}, {
+    "id": "0164876384747",
+    "origin": "ATL",
+    "destination": "LAX",
+    "departDate": "2015-03-16T12:01:00 +04:00",
+    "returnDate": ""
+}, {
+    "id": "016237300719",
+    "origin": "JFK",
+    "destination": "MIA",
+    "departDate": "2014-07-09T01:07:53 +04:00",
+    "returnDate": ""
+  }
+]
