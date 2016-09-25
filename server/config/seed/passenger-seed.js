@@ -1,11 +1,18 @@
+var bcrypt = require('bcrypt');
+var salt = "$2a$10$0D9EdeLzhglYlLebNboIRu";
+
+
 function createCorpPassenger(app, passenger) {
     return new Promise((resolve, reject) => {
+        var encryptedConfNumber = bcrypt.hashSync(passenger.confNumber, salt)
+
         var corppassenger = new app.api.corppassengers.model();
+
         corppassenger.uuid = passenger.uuid;
         corppassenger.type = passenger.type;
         corppassenger.created = passenger.created;
         corppassenger.modified = passenger.modified;
-        corppassenger.confNumber = passenger.confNumber;
+        corppassenger.confNumber = encryptedConfNumber;
         corppassenger.freqFlierNumber = passenger.freqFlierNumber;
         corppassenger.lastBookingData = passenger.lastBookingData;
         corppassenger.passengerName = passenger.passengerName;

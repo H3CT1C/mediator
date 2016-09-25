@@ -1,6 +1,8 @@
 module.exports = function(app) {
     var request = require('request');
     var apiKey = 'KR2htVYSHtcon3CGp2GETbAgNFFvYAXw';
+    var salt = "$2a$10$0D9EdeLzhglYlLebNboIRu";
+
 
     app.get('/api/corppassengers', function(req, res) {
         app.api.corppassengers.model.find(function(err, passengers) {
