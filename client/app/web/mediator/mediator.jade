@@ -2,19 +2,22 @@
 	div(style="width: 200px; position: fixed; left: 235px; top: -66px;")
 		img(src="../../assets/images/logo.png")
 
-	h3.white-text Mediator
+	h3.white-text(style="position: fixed;") Mediator
 	
-	div(ng-repeat="item in list")
-		.row
-			.col.s12.m6
-				.card.white
-					.card-content.black-text
-						span.card-title {{item.destination}}
-						p
-							| I am a very simple card. I am good at containing small bits of information.
-							| I am convenient because I require little markup to use effectively.
-					.card-action
-						a(href='#') {{item.name}}
-						a(href='#') This is a link
+	div(style="padding-top: 126px;")
+		div(ng-repeat="ticket in availableTickets")
+			.row
+				.col.s12.m6
+					.card.white
+						.card-content.black-text
+							span.card-title(style="font-weight: bold; line-height: 28px;") {{ticket.origin}} ✈️ {{ticket.destination}}
+							p(style="font-size: 13px; color: rgb(113,120,131); font-weight: bolder; margin-bottom: 15px;")
+								| Departs on {{ticket.departDate}}
+							p
+								| Flight to {{ticket.destination}} is now available!
+								
+						.card-action(style="padding: 10px 20px 10px 20px")
+							div(style="text-align: right;")
+								a.waves-effect.waves-light.btn-flat.white-text(style="margin-right: 0; background-color: rgb(108, 190, 247);") Book now
 
 		

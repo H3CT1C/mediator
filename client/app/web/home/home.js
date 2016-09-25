@@ -20,24 +20,11 @@ angular.module('mediatorApp.home', [])
 // Controller
 .controller('HomeCtrl', function HomeCtrl($scope, $rootScope, $state, $http) {
     $scope._ = _;
-
-    // $http.get('/api/corppassengers').then(function(data){
-    //        var userInfo = data;
-    //        console.log(userInfo);
-    //  });
-    //
-    //  $http.get('/api/corppassengers/fbfd341a-7f82-11e6-9ccc-916367f449e2').then(function(data){
-    //         var userInfo = data;
-    //         console.log(userInfo);
-    //   });
-    //
-    //  $http.put('/api/tickets/0164475186030').then(function(data){
-    //    console.log(data);
-    //   });
-
-      $http.put('/api/corppassengers/fbfd341a-7f82-11e6-9ccc-916367f449e2', {passengerName: "Andres Villa"}).then(function(data){
-        console.log(data);
-       });
-
-
+    $scope.passengerName = 'alicia';
+    $scope.setPassenger = function() {
+      console.log($scope.passengerName);
+      $state.go('trips', {name: $scope.passengerName});
+    };
+    
+    //end of controller
 });

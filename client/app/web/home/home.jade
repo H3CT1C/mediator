@@ -1,4 +1,16 @@
-div(ng-include="'app/shared/menu/menu.html'")
-.container.home-page
+.container.home-page(ng-controller="HomeCtrl")
+	div(style="width: 200px; position: fixed; left: 235px; top: -66px;")
+		img(src="../../assets/images/logo.png")
 	.center
 		h1.white-text What is Mediator?
+		
+	.row(style="margin-left: 20px; margin-right: 20px; display: flex; flex-direction: column;")
+		.col.s12(style="padding 0;")
+			.row
+				.input-field.col.s12
+					input#name.validate(type='text' ng-model="passengerName")
+					label.active(for='name') Passenger Name
+		a.waves-effect.waves-light.btn-flat.white-text(style="margin-right: 0; background-color: rgb(108, 190, 247); text-align: center;" ng-click="setPassenger()") Login
+	
+		
+		

@@ -4,7 +4,7 @@ angular.module('mediatorApp.trips', [])
 // Routing
 .config(function config($stateProvider) {
     $stateProvider.state('trips', {
-        url: '/trips',
+        url: '/trips/:name',
         views: {
             "main": {
                 controller: 'TripsCtrl',
@@ -18,21 +18,27 @@ angular.module('mediatorApp.trips', [])
 })
 
 // Controller
-.controller('TripsCtrl', function HomeCtrl($scope, $rootScope, $state, $http) {
+.controller('TripsCtrl', function HomeCtrl($scope, $rootScope, $state, $http, $stateParams) {
     $scope._ = _;
+    $scope.passengers = [];
+    $scope.currentPassengerName = $stateParams.name;
+    $scope.currentPassenger = [];
+    $scope.ticketNumber = '';
 
-    var resellTicket = function(ticketNumber) {
-        corpPassengers.forEach(function(passenger) {
-            if (passenger.ticketNumber === ticketNumber) {
-                console.log(passenger);
-                passenger.isAvailable = true;
+    $http.get('/api/corppassengers')
+        .then((response) => {
+            $scope.passengers = response.data;
+            $scope.currentPassenger = $scope.passengers.filter((passenger) => passenger.passengerName === $scope.currentPassengerName);
+
+            if ($scope.currentPassenger.length > 0) {
+                $scope.ticketNumber = $scope.currentPassenger[0].ticketNumber;
+            } else {
+              console.log("No ticket number available for passenger", $scope.currentPassengerName);
             }
-        });
-    }
 
-    var corpPassengers;
-    $.getJSON("../../assets/json/passengers.json", function(json) {
-        corpPassengers = json;
-        resellTicket("0164876384747");
-    });
+        }, (error) => {
+            console.error('ERROR 😡', error);
+        });
+
+    //end of controller
 });
