@@ -11,7 +11,7 @@
 				.card.white
 					.card-content.black-text
 						div(style="display: flex; padding-bottom: 4px; justify-content: space-between; margin-bottom: 13px; border-bottom: 1px solid rgb(123, 130, 139); color: rgb(123, 130, 139);")
-							p(style="font-weight: bolder;" ng-bind="ticket.departDate | date:'MM/dd/yyyy'")
+							p(style="font-weight: bolder;") {{ticket.departDate}}
 							p ✈️
 						span.card-title(style="font-weight: bold; line-height: 28px;") {{ticket.destination}}
 						p(style="font-size: 13px; color: rgb(113,120,131); font-weight: bolder;")
