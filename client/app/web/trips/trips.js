@@ -79,7 +79,6 @@ angular.module('mediatorApp.trips', [])
     }
 
     $scope.goToMediator = function() {
-      console.log('hi');
       $state.go('mediator');
     }
 
